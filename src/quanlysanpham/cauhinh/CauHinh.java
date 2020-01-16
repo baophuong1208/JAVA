@@ -3,19 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package quanlysanpham;
+package quanlysanpham.cauhinh;
 
-import quanlysanpham.Truyxuatdulieu.DocGhiFile;
-
+import java.nio.file.Paths;
 /**
  *
  * @author Phuong
  */
-public class Quanlysanpham {
+public class CauHinh {
 
-    public static void main(String[] args) {
-        DocGhiFile docghi = new DocGhiFile();
-        
-    }
+    public final static String filesPath = Paths.get(System.getProperty("user.dir"),"src","files").toString();
     
+
 }

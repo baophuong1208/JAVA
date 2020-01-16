@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package quanlysanpham;
+package quanlysanpham.Truyxuatdulieu;
 
-import quanlysanpham.Truyxuatdulieu.DocGhiFile;
+import quanlysanpham.cauhinh.CauHinh;
 
 /**
  *
  * @author Phuong
  */
-public class Quanlysanpham {
+public class DocGhiFile {
 
-    public static void main(String[] args) {
-        DocGhiFile docghi = new DocGhiFile();
+    public DocGhiFile() {
+        
         
     }
     

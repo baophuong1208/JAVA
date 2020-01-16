@@ -24,6 +24,7 @@ public class HoaDon {
     public void setNgaythanhtoan(Date ngaythanhtoan) {
         this.ngaythanhtoan = ngaythanhtoan;
     }
+     
     
     
 }

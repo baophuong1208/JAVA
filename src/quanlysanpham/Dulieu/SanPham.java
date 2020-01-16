@@ -10,10 +10,10 @@ package quanlysanpham.Dulieu;
  * @author Phuong
  */
 public abstract class SanPham {
-    protected String ten;
-    protected int soluong;
-    protected float gia;
-    protected String donvi;
+    private String ten;
+    private int soluong;
+    private float gia;
+    private String donvi;
 
     public SanPham() {
     }
