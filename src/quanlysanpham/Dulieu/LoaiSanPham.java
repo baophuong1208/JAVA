@@ -5,30 +5,25 @@
  */
 package quanlysanpham.Dulieu;
 
-import java.util.Date;
-
 /**
  *
  * @author Phuong
  */
-public class Keo extends SanPham{
-    private Date hsd;
+public enum LoaiSanPham {
+    AO("ao"),
+    KEO("keo");
 
-    public Keo() {
+    private LoaiSanPham() {
     }
 
-    public Keo(Date hsd) {
-        this.hsd = hsd;
-    }
-
-    public Date getHsd() {
-        return hsd;
-    }
-
-    public void setHsd(Date hsd) {
-        this.hsd = hsd;
+    private LoaiSanPham(String value) {
+        this.value = value;
     }
     
     
+    private String value;
     
+    public String getValue(){
+        return value;
+    }
 }

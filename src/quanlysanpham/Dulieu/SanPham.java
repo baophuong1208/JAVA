@@ -14,6 +14,16 @@ public abstract class SanPham {
     private int soluong;
     private float gia;
     private String donvi;
+    private LoaiSanPham loai;
+    private String viTri;
+
+    public String getViTri() {
+        return viTri;
+    }
+
+    public void setViTri(String viTri) {
+        this.viTri = viTri;
+    }
 
     public SanPham() {
     }
@@ -55,6 +65,14 @@ public abstract class SanPham {
 
     public void setDonvi(String donvi) {
         this.donvi = donvi;
+    }
+
+    public LoaiSanPham getLoai() {
+        return loai;
+    }
+
+    public void setLoai(LoaiSanPham loai) {
+        this.loai = loai;
     }
     
     
