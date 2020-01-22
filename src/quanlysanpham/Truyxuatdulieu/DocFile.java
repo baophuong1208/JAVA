@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package quanlysanpham.Truyxuatdulieu;
 
 import java.io.BufferedReader;
@@ -19,14 +15,14 @@ import quanlysanpham.Dulieu.LoaiSanPham;
 import quanlysanpham.Dulieu.SanPham;
 import quanlysanpham.cauhinh.CauHinh;
 
-/**
- *
- * @author Phuong
- */
-public class DocGhiFile {
+public class DocFile {
 
-    public DocGhiFile() {
+    public DocFile() {
+         System.out.println("File database");
+        
+        
         BufferedReader br = null;
+       
         try {
             String filesPath = CauHinh.filesPath;
 //            System.out.println(filesPath+"\\database.txt");
@@ -35,30 +31,32 @@ public class DocGhiFile {
 
             while ((docdata = br.readLine()) != null) {
                 System.out.println(docdata);
-                String[] cat = docdata.split("\\$");
-                for (int i = 0; i < cat.length; i++) {
-                    System.out.println(cat[i]);
-                }
+//                String[] cat = docdata.split("\\$");
+//                for (int i = 0; i < cat.length; i++) {
+//                    System.out.println(cat[i]);
+//                }
 
             }
 
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(DocGhiFile.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocFile.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(DocGhiFile.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocFile.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
                 br.close();
             } catch (IOException ex) {
-                Logger.getLogger(DocGhiFile.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(DocFile.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 
     }
     
     public List<SanPham> layTatCaSanPham() {
+        System.out.println("san pham: ");
         BufferedReader bf = null;
         List<SanPham> list = new ArrayList<>();
+        
         try {
             String filesPath = CauHinh.filesPath;
 //            System.out.println(filesPath+"\\sanpham.txt");
@@ -88,14 +86,14 @@ public class DocGhiFile {
 
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(DocGhiFile.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocFile.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(DocGhiFile.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocFile.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
                 bf.close();
             } catch (IOException ex) {
-                Logger.getLogger(DocGhiFile.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(DocFile.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         return list;

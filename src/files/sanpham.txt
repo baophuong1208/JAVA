@@ -1,4 +1,7 @@
-ao$20$chiec$30000$kho1$ao
-keo$100$goi$20000$kho2$keo
-keo$20$goi$200$kho3$keo
-ao$10$chiec$20000$kho2$ao
+ao$20$chiec$2000$kho1$ao
+ao$30$chiec$3000$kho1$ao
+ao$10$chiec$5000$kho2$ao
+keo$10$goi$300$kho3$keo
+keo$10$goi$200$kho3$keo
+keo$60$goi$500$kho4$keo
+

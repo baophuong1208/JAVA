@@ -3,7 +3,7 @@ package quanlysanpham.Xuly;
 import java.util.ArrayList;
 import java.util.List;
 import quanlysanpham.Dulieu.SanPham;
-import quanlysanpham.Truyxuatdulieu.DocGhiFile;
+import quanlysanpham.Truyxuatdulieu.DocFile;
 
 /**
  *
@@ -11,14 +11,14 @@ import quanlysanpham.Truyxuatdulieu.DocGhiFile;
  */
 public class ThongKe {
 
-    DocGhiFile docGhiFile;
+    DocFile docFile;
 
     public ThongKe() {
-        docGhiFile = new DocGhiFile();
+        docFile = new DocFile();
     }
 
-    public ThongKe(DocGhiFile docGhiFile) {
-        this.docGhiFile = docGhiFile;
+    public ThongKe(DocFile docFile) {
+        this.docFile = docFile;
     }
 
     private void in(List<SanPham> list) {
@@ -34,12 +34,12 @@ public class ThongKe {
     }
 
     public void thongKeSanPham() {
-        List<SanPham> list = docGhiFile.layTatCaSanPham();
+        List<SanPham> list = docFile.layTatCaSanPham();
         in(list);
     }
 
     public void locSanPhamTheoTen(String tenSanPham) {
-        List<SanPham> list = docGhiFile.layTatCaSanPham();
+        List<SanPham> list = docFile.layTatCaSanPham();
         List<SanPham> list2 = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getTen().equals(tenSanPham)) {
