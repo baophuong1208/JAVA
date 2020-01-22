@@ -19,6 +19,8 @@ public class GhiFile {
             FileWriter fw = new FileWriter(filesPath+"\\database.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(contentData);
+            bw.close();
+            fw.close();
         } catch (IOException ex) {
             Logger.getLogger(GhiFile.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -29,6 +31,8 @@ public class GhiFile {
             FileWriter fw = new FileWriter(filesPath+"\\sanpham.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(contentSanPham);
+            bw.close();
+            fw.close();
         } catch (IOException ex) {
             Logger.getLogger(GhiFile.class.getName()).log(Level.SEVERE, null, ex);
         }

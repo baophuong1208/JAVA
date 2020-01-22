@@ -34,6 +34,7 @@ public class Quanlysanpham {
         System.out.println("Nhap noi dung ghi file sanpham.txt");
         String contentSanPham = new Scanner(System.in).nextLine();
         gf.ghiSanPham(contentSanPham);
+        
     }
 
 }
