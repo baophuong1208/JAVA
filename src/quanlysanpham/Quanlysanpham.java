@@ -26,15 +26,14 @@ public class Quanlysanpham {
         String tenSanPham = new Scanner(System.in).nextLine();
         thongKe.locSanPhamTheoTen(tenSanPham);
 
-//            
-//                System.out.println("Ghi file");
-//                GhiFile gf = new GhiFile();
-//                System.out.println("Nhap noi dung ghi file database.txt");
-//                String contentDatabase = new Scanner(System.in).nextLine();
-//                gf.ghiData(contentDatabase);
-//                System.out.println("Nhap noi dung ghi file sanpham.txt");
-//                String contentSanPham = new Scanner(System.in).nextLine();
-//                gf.ghiSanPham(contentSanPham);
+        System.out.println("Ghi file");
+        GhiFile gf = new GhiFile();
+        System.out.println("Nhap noi dung ghi file database.txt");
+        String contentDatabase = new Scanner(System.in).nextLine();
+        gf.ghiData(contentDatabase);
+        System.out.println("Nhap noi dung ghi file sanpham.txt");
+        String contentSanPham = new Scanner(System.in).nextLine();
+        gf.ghiSanPham(contentSanPham);
     }
 
 }

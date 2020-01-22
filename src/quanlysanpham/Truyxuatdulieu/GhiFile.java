@@ -16,7 +16,7 @@ public class GhiFile {
     
     public void ghiData(String contentData) {
         try {
-            FileWriter fw = new FileWriter(filesPath+"\\databse.txt", true);
+            FileWriter fw = new FileWriter(filesPath+"\\database.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(contentData);
         } catch (IOException ex) {

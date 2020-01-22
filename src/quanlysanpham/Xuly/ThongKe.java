@@ -21,7 +21,7 @@ public class ThongKe {
         this.docFile = docFile;
     }
 
-    private void in(List<SanPham> list) {
+    public void in(List<SanPham> list) {
         for (int i = 0; i < list.size(); i++) {
             System.out.print(list.get(i).getTen());
             System.out.print(list.get(i).getSoluong());
