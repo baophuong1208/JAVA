@@ -1,9 +1,15 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package quanlysanpham.Truyxuatdulieu;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,48 +21,40 @@ import quanlysanpham.Dulieu.LoaiSanPham;
 import quanlysanpham.Dulieu.SanPham;
 import quanlysanpham.cauhinh.CauHinh;
 
-public class DocFile {
+/**
+ *
+ * @author Phuong
+ */
+public class TruyXuatDuLieuFileSanPham {
+//
+//    public void SuaSanPham(String tenSanPham, int soLuong, String donVi, float gia, String viTri, LoaiSanPham loaiSP) {
+//        DocFile df = new DocFile();
+//        List<SanPham> list = df.layTatCaSanPham();
+//        List<SanPham> list2 = new ArrayList<>();
+//        for (int i = 0; i < list.size(); i++) {
+//            if (list2.get(i).getTen().equals(tenSanPham)) {
+//                list2.get(i).setTen(tenSanPham);
+//                list2.get(i).setSoluong(soLuong);
+//                list2.get(i).setDonvi(donVi);
+//                list2.get(i).setGia(gia);
+//                list2.get(i).setViTri(viTri);
+//                list2.get(i).setLoai(loaiSP);
+//                list.add(list2.get(i));
+//                GhiFile gf = new GhiFile();
+//                gf.ghiSanPham(tenSanPham);
+//
+//            }
+//        }
+//
+//    }
 
-    public DocFile() {
-         System.out.println("File database");
-        
-        
-        BufferedReader br = null;
-       
-        try {
-            String filesPath = CauHinh.filesPath;
-//            System.out.println(filesPath+"\\database.txt");
-            br = new BufferedReader(new FileReader(filesPath + "\\database.txt"));
-            String docdata;
+    String filesPath = CauHinh.filesPath;
 
-            while ((docdata = br.readLine()) != null) {
-                System.out.println(docdata);
-//                String[] cat = docdata.split("\\$");
-//                for (int i = 0; i < cat.length; i++) {
-//                    System.out.println(cat[i]);
-//                }
-
-            }
-
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(DocFile.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(DocFile.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                br.close();
-            } catch (IOException ex) {
-                Logger.getLogger(DocFile.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-
-    }
-    
     public List<SanPham> layTatCaSanPham() {
-        System.out.println("san pham: ");
+//        System.out.println("san pham: ");
         BufferedReader bf = null;
         List<SanPham> list = new ArrayList<>();
-        
+
         try {
             String filesPath = CauHinh.filesPath;
 //            System.out.println(filesPath+"\\sanpham.txt");
@@ -86,17 +84,25 @@ public class DocFile {
 
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(DocFile.class.getName()).log(Level.SEVERE, null, ex);
+
         } catch (IOException ex) {
-            Logger.getLogger(DocFile.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                bf.close();
-            } catch (IOException ex) {
-                Logger.getLogger(DocFile.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Logger.getLogger(TruyXuatDuLieuFileSanPham.class.getName()).log(Level.SEVERE, null, ex);
         }
+
         return list;
+
+    }
+
+    public void ghiSanPham(String contentSanPham) {
+        try {
+            FileWriter fw = new FileWriter(filesPath + "\\sanpham.txt", true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(contentSanPham);
+            bw.close();
+            fw.close();
+        } catch (IOException ex) {
+
+        }
 
     }
 

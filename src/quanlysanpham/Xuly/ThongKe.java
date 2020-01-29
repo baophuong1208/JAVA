@@ -3,7 +3,7 @@ package quanlysanpham.Xuly;
 import java.util.ArrayList;
 import java.util.List;
 import quanlysanpham.Dulieu.SanPham;
-import quanlysanpham.Truyxuatdulieu.DocFile;
+import quanlysanpham.Truyxuatdulieu.TruyXuatDuLieuFileSanPham;
 
 /**
  *
@@ -11,15 +11,21 @@ import quanlysanpham.Truyxuatdulieu.DocFile;
  */
 public class ThongKe {
 
-    DocFile docFile;
+//    DocFile docFile;
+    TruyXuatDuLieuFileSanPham docFile;
 
     public ThongKe() {
-        docFile = new DocFile();
+        docFile = new TruyXuatDuLieuFileSanPham();
     }
 
-    public ThongKe(DocFile docFile) {
+    public TruyXuatDuLieuFileSanPham getDocFile() {
+        return docFile;
+    }
+
+    public void setDocFile(TruyXuatDuLieuFileSanPham docFile) {
         this.docFile = docFile;
     }
+    
 
     public void in(List<SanPham> list) {
         for (int i = 0; i < list.size(); i++) {

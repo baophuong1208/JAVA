@@ -5,3 +5,5 @@ keo$10$goi$300$kho3$keo
 keo$10$goi$200$kho3$keo
 keo$60$goi$500$kho4$keo
 ao$15$chiec$3500$kho1$ao
+ao$10$chiec$5000$kho1$ao
+keo$18$goi$5000$kho2$keo
