@@ -26,27 +26,6 @@ import quanlysanpham.cauhinh.CauHinh;
  * @author Phuong
  */
 public class TruyXuatDuLieuFileSanPham {
-//
-//    public void SuaSanPham(String tenSanPham, int soLuong, String donVi, float gia, String viTri, LoaiSanPham loaiSP) {
-//        DocFile df = new DocFile();
-//        List<SanPham> list = df.layTatCaSanPham();
-//        List<SanPham> list2 = new ArrayList<>();
-//        for (int i = 0; i < list.size(); i++) {
-//            if (list2.get(i).getTen().equals(tenSanPham)) {
-//                list2.get(i).setTen(tenSanPham);
-//                list2.get(i).setSoluong(soLuong);
-//                list2.get(i).setDonvi(donVi);
-//                list2.get(i).setGia(gia);
-//                list2.get(i).setViTri(viTri);
-//                list2.get(i).setLoai(loaiSP);
-//                list.add(list2.get(i));
-//                GhiFile gf = new GhiFile();
-//                gf.ghiSanPham(tenSanPham);
-//
-//            }
-//        }
-//
-//    }
 
     String filesPath = CauHinh.filesPath;
 
@@ -106,4 +85,73 @@ public class TruyXuatDuLieuFileSanPham {
 
     }
 
+    public void SuaSanPham(String tenSanPhamS, int soLuong, String donVi, float gia, String viTri) {
+        List<SanPham> list = layTatCaSanPham();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getTen().equals(tenSanPhamS)) {
+
+                list.get(i).setTen(tenSanPhamS);
+                list.get(i).setSoluong(soLuong);
+                list.get(i).setDonvi(donVi);
+                list.get(i).setGia(gia);
+                list.get(i).setViTri(viTri);
+
+            } else {
+                System.out.println("khong tim thay san pham");
+            }
+        }
+        String giatri = "";
+           FileWriter fw = null;
+        for (int j = 0; j < list.size(); j++) {
+            giatri = giatri + list.get(j).getTen() + "$" + list.get(j).getSoluong() + "$" + list.get(j).getDonvi() + "$" + list.get(j).getGia() + "$" + list.get(j).getViTri()+"\n";
+        try {
+            fw = new FileWriter(filesPath + "\\sanpham.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(giatri);
+            bw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(TruyXuatDuLieuFileSanPham.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fw.close();
+            } catch (IOException ex) {
+                Logger.getLogger(TruyXuatDuLieuFileSanPham.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        }
+        
+    }
+    public void xoaSP(String tenSanPhamX){
+        List<SanPham> list = layTatCaSanPham();
+        String sp = "";
+         FileWriter fw = null;
+        for (int i =0; i<list.size(); i++){
+            if(list.get(i).getTen().equals(tenSanPhamX)){
+                list.remove(i);
+            }
+        }
+        for (int j=0; j<list.size();j++){
+           sp = sp + list.get(j).getTen() + "$" + list.get(j).getSoluong() + "$" + list.get(j).getDonvi() + "$" + list.get(j).getGia() + "$" + list.get(j).getViTri()+"\n";
+         try {
+            fw = new FileWriter(filesPath + "\\sanpham.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(sp);
+            bw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(TruyXuatDuLieuFileSanPham.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fw.close();
+            } catch (IOException ex) {
+                Logger.getLogger(TruyXuatDuLieuFileSanPham.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        }
+        
+        
+    }
+
 }
+
+
