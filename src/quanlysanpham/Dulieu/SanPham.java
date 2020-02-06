@@ -16,6 +16,7 @@ public abstract class SanPham {
     private String donvi;
     private LoaiSanPham loai;
     private String viTri;
+    
 
     public String getViTri() {
         return viTri;

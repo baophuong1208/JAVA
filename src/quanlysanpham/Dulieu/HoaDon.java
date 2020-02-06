@@ -7,24 +7,38 @@ package quanlysanpham.Dulieu;
 
 import java.util.Date;
 
-public class HoaDon {
-    private Date ngaythanhtoan;
+public class HoaDon{
+    private String ngaythanhtoan;
+    private String dssanpham;
+    private float thanhtien;
 
-    public HoaDon() {
+    public float getThanhtien() {
+        return thanhtien;
     }
 
-    public HoaDon(Date ngaythanhtoan) {
-        this.ngaythanhtoan = ngaythanhtoan;
+    public void setThanhtien(float thanhtien) {
+        this.thanhtien = thanhtien;
+    }
+    
+
+    public String getDssanpham() {
+        return dssanpham;
     }
 
-    public Date getNgaythanhtoan() {
+    public void setDssanpham(String dssanpham) {
+        this.dssanpham = dssanpham;
+    }
+    
+    
+
+    public String getNgaythanhtoan() {
         return ngaythanhtoan;
     }
 
-    public void setNgaythanhtoan(Date ngaythanhtoan) {
+    public void setNgaythanhtoan(String ngaythanhtoan) {
         this.ngaythanhtoan = ngaythanhtoan;
     }
-     
+
     
     
 }
