@@ -96,8 +96,6 @@ public class TruyXuatDuLieuFileSanPham {
                 list.get(i).setGia(gia);
                 list.get(i).setViTri(viTri);
 
-            } else {
-                System.out.println("khong tim thay san pham");
             }
         }
         String giatri = "";

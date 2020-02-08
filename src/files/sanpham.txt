@@ -1,5 +1,4 @@
-ao2$30$chiec$3000.0$kho1
 ao3$10$chiec$5000.0$kho2
 keo2$10$goi$200.0$kho3
 keo3$60$goi$500.0$kho4
-ao5$1$chiec$500.0$kho1
+ao1$10$chiec$1000.0$kho1

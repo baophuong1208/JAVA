@@ -74,8 +74,6 @@ public class TruyXuatDuLieuFileHoaDon {
                 list.get(i).setDssanpham(dsspSua);
                 list.get(i).setThanhtien(thanhtien);
                 
-            } else {
-                System.out.println("khong tim thay");
             }
         }
         String suahd = "";
@@ -99,6 +97,36 @@ public class TruyXuatDuLieuFileHoaDon {
 
         }
 
+    }
+    
+    public void xoaHD(String ngayThangX, String dsspX){
+        List<HoaDon> list = DocHD();
+        String hd ="";
+        for (int i=0; i<list.size(); i++){
+            if(list.get(i).getNgaythanhtoan().equals(ngayThangX)&&list.get(i).getDssanpham().equals(dsspX)){
+                list.remove(i);
+            
+            }
+        }
+        for (int j=0; j<list.size(); j++){
+        FileWriter fw = null;
+            try {
+                hd = hd+ list.get(j).getNgaythanhtoan() + "$" + list.get(j).getDssanpham() + "$" + list.get(j).getThanhtien() + "\n";
+                fw = new FileWriter(filesPath+"\\hoadon.txt");
+                BufferedWriter bw = new BufferedWriter(fw);
+                bw.write(hd);
+                bw.close();
+            } catch (IOException ex) {
+                Logger.getLogger(TruyXuatDuLieuFileHoaDon.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                try {
+                    fw.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(TruyXuatDuLieuFileHoaDon.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        
+        }
     }
 
 }
