@@ -50,15 +50,24 @@ public class Quanlysanpham {
         float gia = new Scanner(System.in).nextFloat();
         System.out.println("vi tri");
         String viTri = new Scanner(System.in).nextLine();
-//        System.out.println("Loai sp");
+        System.out.println("Loai sp");
         TruyXuatDuLieuFileSanPham sua = new TruyXuatDuLieuFileSanPham();
         sua.SuaSanPham(tenSanPhamS, soLuong, donVi, gia, viTri);
         System.out.println("Xoa san pham theo ten");
         System.out.println("nhap ten san pham can xoa");
         String tenSanPhamX = new Scanner(System.in).nextLine();
         sua.xoaSP(tenSanPhamX);
-    
-        
+        System.out.println("Nhap ngay thang can tim o hoa don");
+        String ngayThangCanTim = new Scanner(System.in).nextLine();
+        System.out.println("Nhap dssp can tim o hoa don");
+        String dsspCanTim = new Scanner(System.in).nextLine();
+        System.out.println("Nhap ngay thang can sua");
+        String ngayThangSua = new Scanner(System.in).nextLine();
+        System.out.println("Nhap dssp can sua");
+        String dsspSua = new Scanner(System.in).nextLine();
+        System.out.println("Nhap thanh tien can sua");
+        float thanhtien = new Scanner(System.in).nextFloat();
+        ghidata.suaHD(ngayThangCanTim, dsspCanTim, ngayThangSua, dsspSua, thanhtien);
     }
 
 }
