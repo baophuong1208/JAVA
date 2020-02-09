@@ -75,6 +75,12 @@ public abstract class SanPham {
     public void setLoai(LoaiSanPham loai) {
         this.loai = loai;
     }
+
+    @Override
+    public String toString() {
+        return ten+"$"+ soluong+"$"+donvi+"$"+ gia+"$"+viTri+"\n";
+    }
+    
     
     
     

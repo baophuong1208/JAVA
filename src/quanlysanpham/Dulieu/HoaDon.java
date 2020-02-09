@@ -39,6 +39,10 @@ public class HoaDon{
         this.ngaythanhtoan = ngaythanhtoan;
     }
 
-    
+    @Override
+    public String toString() {
+        return ngaythanhtoan+"$"+dssanpham+"$"+thanhtien+"\n";
+    }
+
     
 }
