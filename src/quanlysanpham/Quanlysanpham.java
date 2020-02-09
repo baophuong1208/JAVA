@@ -10,6 +10,8 @@ import quanlysanpham.Dulieu.LoaiSanPham;
 import quanlysanpham.Truyxuatdulieu.TruyXuatDuLieuFileHoaDon;
 import quanlysanpham.Truyxuatdulieu.TruyXuatDuLieuFileSanPham;
 import quanlysanpham.Xuly.ThongKe;
+import quanlysanpham.Xuly.XuLyHoaDon;
+import quanlysanpham.Xuly.XuLySanPham;
 import quanlysanpham.cauhinh.CauHinh;
 
 /**
@@ -19,8 +21,8 @@ import quanlysanpham.cauhinh.CauHinh;
 public class Quanlysanpham {
 
     public static void main(String[] args) {
-        TruyXuatDuLieuFileSanPham sua = new TruyXuatDuLieuFileSanPham();
-        TruyXuatDuLieuFileHoaDon ghiHD = new TruyXuatDuLieuFileHoaDon();
+        TruyXuatDuLieuFileSanPham sp = new TruyXuatDuLieuFileSanPham();
+        TruyXuatDuLieuFileHoaDon hd = new TruyXuatDuLieuFileHoaDon();
 
         int n;
 
@@ -63,6 +65,7 @@ public class Quanlysanpham {
                     break;
                 }
                 case 4: {
+                    XuLySanPham xuly = new XuLySanPham();
                     System.out.println("ten sp can sua: ");
                     String tenSanPhamS = new Scanner(System.in).nextLine();
                     System.out.println("so luong");
@@ -74,15 +77,16 @@ public class Quanlysanpham {
                     System.out.println("vi tri");
                     String viTri = new Scanner(System.in).nextLine();
                     System.out.println("Loai sp");
-                    sua.SuaSanPham(tenSanPhamS, soLuong, donVi, gia, viTri);
+                    xuly.SuaSanPham(tenSanPhamS, soLuong, donVi, gia, viTri);
 
                     break;
                 }
                 case 5: {
+                    XuLySanPham xuly = new XuLySanPham();
                     System.out.println("Xoa san pham theo ten");
                     System.out.println("nhap ten san pham can xoa");
                     String tenSanPhamX = new Scanner(System.in).nextLine();
-                    sua.xoaSP(tenSanPhamX);
+                    xuly.xoaSP(tenSanPhamX);
                     break;
                 }
                 case 6: {
@@ -95,13 +99,13 @@ public class Quanlysanpham {
                 case 7: {
                     System.out.println("Ghi file");
                     System.out.println("Nhap noi dung ghi file hoadon.txt");
-                    String contentDatabase = new Scanner(System.in).nextLine();
-                    ghiHD.ghiData(contentDatabase);
+                    String contentHD = new Scanner(System.in).nextLine();
+                    hd.ghiData(contentHD);
 
                     break;
                 }
                 case 8: {
-
+                    XuLyHoaDon xuly = new XuLyHoaDon();
                     System.out.println("Nhap ngay thang can tim o hoa don");
                     String ngayThangCanTim = new Scanner(System.in).nextLine();
                     System.out.println("Nhap dssp can tim o hoa don");
@@ -112,15 +116,16 @@ public class Quanlysanpham {
                     String dsspSua = new Scanner(System.in).nextLine();
                     System.out.println("Nhap thanh tien can sua");
                     float thanhtien = new Scanner(System.in).nextFloat();
-                    ghiHD.suaHD(ngayThangCanTim, dsspCanTim, ngayThangSua, dsspSua, thanhtien);
+                    xuly.suaHD(ngayThangCanTim, dsspCanTim, ngayThangSua, dsspSua, thanhtien);
                     break;
                 }
                 case 9: {
+                    XuLyHoaDon xuly = new XuLyHoaDon();
                     System.out.println("Nhap ngay thang cua hoa don can xoa");
                     String ngayThangX = new Scanner(System.in).nextLine();
                     System.out.println("nhap dssp cua hoa don can xoa");
                     String dsspX = new Scanner(System.in).nextLine();
-                    ghiHD.xoaHD(ngayThangX, dsspX);
+                    xuly.xoaHD(ngayThangX, dsspX);
                     break;
                 }
             }
